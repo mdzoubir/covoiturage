@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes" Selected="Yes">
+		<Model Expanded="Yes" ID="{398D8E8B-1F79-4F27-AECB-C45B2F11697A}" Name="FileRouge" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="FileRouge.moo"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>
