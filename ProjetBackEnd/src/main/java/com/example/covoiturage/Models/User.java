@@ -25,6 +25,9 @@ public class User {
     private String fullName;
 
     @NotBlank
+    private String username;
+
+    @NotBlank
     @Column(nullable = false)
     private  String email;
 
@@ -58,6 +61,14 @@ public class User {
 
     }
 
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Long getIdUser() {
         return idUser;

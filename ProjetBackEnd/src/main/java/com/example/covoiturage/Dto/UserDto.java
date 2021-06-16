@@ -5,6 +5,7 @@ import java.util.Set;
 public class UserDto {
     private Long id;
     private String userId;
+    private String fullName;
     private String username;
     private String email;
     private String password;
@@ -12,6 +13,14 @@ public class UserDto {
     private String encryptedPassword;
     private Boolean emailVerificationStatus = false;
     private String telephone;
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
     public String getTelephone() {
         return telephone;
