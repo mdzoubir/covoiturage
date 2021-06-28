@@ -1,0 +1,45 @@
+<form  [formGroup]="registreForm" (ngSubmit)="onSubmit()">
+    <div class="container d-flex justify-content-center">
+        <div class="d-flex flex-column justify-content-between">
+            <div class="card mt-3 p-5">
+                <div class="logo mb-3"><img src="assets/images/Logo.png" width="150px" height="150px"></div>
+                <div>
+                    <p class="mb-1">YALAH M3AYA</p>
+                    <h4 class="mb-5 text-white">Bienvenue!!</h4>
+                </div> <button class="btn btn-primary btn-lg"><small>Déjà inscrit ?</small> <a [routerLink]="['/login']" id="link"> <span>&nbsp;Connexion</span></a> </button>
+            </div>
+            <div class="card two bg-white px-5 py-4 mb-3">
+
+
+                <div class="form-group">
+                    <input type="text"  formControlName="fullName" class="form-control" id="FullName" required>
+                    <label class="form-control-placeholder" for="mail">Nom et Prénom</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text"  formControlName="username" class="form-control" id="username" required>
+                    <label class="form-control-placeholder" for="mail">Nom d'utilisateur</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email"  formControlName="email" class="form-control" id="email" required>
+                    <label class="form-control-placeholder" for="mail">Email</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text"  formControlName="telephone" class="form-control" id="telephone" required>
+                    <label class="form-control-placeholder" for="telephone">Telephone</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" formControlName="password" class="form-control" id="password" required>
+                    <label class="form-control-placeholder" for="password">Mot de Passe</label>
+                </div> 
+
+
+                    <button class="btn btn-primary btn-block btn-lg mt-1 mb-2">
+                        <span>Enregistrer<i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+            </div>
+        </div>
+    </div>
+</form>
