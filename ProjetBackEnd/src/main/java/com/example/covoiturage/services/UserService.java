@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 public interface UserService {
     UserDto createUser(UserDto userDto);
     List<UserDto> getUsers(int page, int limit);

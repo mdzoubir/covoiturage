@@ -72,11 +72,11 @@ public class AuthController {
 
 
 	@PostMapping("/signup")
-	public String registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+	public ResponseEntity<String> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 		UserDto userDto = new UserDto();
 		BeanUtils.copyProperties(signUpRequest, userDto);
 		userService.createUser(userDto);
-		return "User registered successfully!";
+		return ResponseEntity.ok(new String("the registration is success"));
 	}
 
 

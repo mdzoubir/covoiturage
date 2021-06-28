@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 public class Ville {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idC;
+    private Long idVille;
 
     @NotBlank
     @Column
@@ -23,12 +23,12 @@ public class Ville {
 
     }
 
-    public Long getIdC() {
-        return idC;
+    public Long getIdVille() {
+        return idVille;
     }
 
-    public void setIdC(Long idC) {
-        this.idC = idC;
+    public void setIdVille(Long idVille) {
+        this.idVille = idVille;
     }
 
     public String getNameVile() {

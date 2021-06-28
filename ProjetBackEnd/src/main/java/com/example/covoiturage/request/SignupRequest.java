@@ -28,11 +28,12 @@ public class SignupRequest {
     @NotBlank
     private String telephone;
 
-    public SignupRequest(String username, String email, String password, String telephone) {
+    public SignupRequest(String fullName,String username, String email, String password, String telephone) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.telephone = telephone;
+        this.fullName=fullName;
     }
 
     public String getFullName() {

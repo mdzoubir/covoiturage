@@ -6,6 +6,10 @@ import javax.validation.constraints.NotBlank;
 @Entity
 public class Voiture {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idV;
+
+    @Column(unique=true)
     private String Matricule;
 
     @NotBlank
@@ -23,6 +27,22 @@ public class Voiture {
  {
 
  }
+
+    public Long getIdV() {
+        return idV;
+    }
+
+    public void setIdV(Long idV) {
+        this.idV = idV;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getMatricule() {
         return Matricule;
@@ -48,3 +68,4 @@ public class Voiture {
         this.color = color;
     }
 }
+
