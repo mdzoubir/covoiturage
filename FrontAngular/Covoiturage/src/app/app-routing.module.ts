@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegistreComponent } from './components/registre/registre.component';
+import { FormConvComponent } from './components/form-conv/form-conv.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'registre',
     component:RegistreComponent
+  },
+  {
+    path:'forme',
+    component:FormConvComponent
   }
 ];
 

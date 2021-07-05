@@ -1,6 +1,7 @@
+import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -10,6 +11,8 @@ import { DashbordAdminComponent } from './components/dashbord-admin/dashbord-adm
 import { RegistreComponent } from './components/registre/registre.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormConvComponent } from './components/form-conv/form-conv.component';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashbordAdminComponent,
     RegistreComponent,
     NavbarComponent,
+    FormConvComponent
     
   ],
   imports: [
@@ -31,7 +35,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     
   ],
-  providers: [],
+  providers:[{
+    provide:HTTP_INTERCEPTORS,
+    useClass:JwtInterceptor,
+    multi:true
+  }],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
