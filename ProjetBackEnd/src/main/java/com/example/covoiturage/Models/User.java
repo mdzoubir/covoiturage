@@ -21,11 +21,14 @@ public class User {
     @Column(nullable = false, unique = true)
     private String userId;
 
-    @NotBlank
-    private String fullName;
 
     @NotBlank
     private String username;
+
+    @NotBlank
+    private String fullName;
+
+
 
     @NotBlank
     @Column(nullable = false)
