@@ -1,6 +1,6 @@
 import { Roles } from "./roles";
 export interface User {
-    id : number;
+    idUser : number;
     
     fullName:string;
     
@@ -12,5 +12,5 @@ export interface User {
     
     password: string;
 
-   Role :Roles ;
+    Role :Roles ;
 }

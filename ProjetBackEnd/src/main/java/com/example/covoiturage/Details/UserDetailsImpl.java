@@ -1,7 +1,6 @@
 package com.example.covoiturage.Details;
 
 import com.example.covoiturage.Models.User;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,18 +19,20 @@ public class UserDetailsImpl implements UserDetails {
 
 	private String email;
 
-	@JsonIgnore
 	private String password;
+
+	private Boolean email_verification;
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public UserDetailsImpl(Long id, String username, String email, String password,
+	public UserDetailsImpl(Long id, String username, String email, String password, Boolean verification,
 						   Collection<? extends GrantedAuthority> authorities) {
 		this.id = id;
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.authorities = authorities;
+		this.email_verification = verification;
 	}
 
 	public static UserDetailsImpl build(User user) {
@@ -44,6 +45,7 @@ public class UserDetailsImpl implements UserDetails {
 				user.getFullName(),
 				user.getEmail(),
 				user.getPassword(),
+				user.getEmailVerificationStatus(),
 				authorities);
 	}
 
@@ -68,6 +70,14 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public String getUsername() {
 		return username;
+	}
+
+	public Boolean getEmail_verification() {
+		return email_verification;
+	}
+
+	public void setEmail_verification(Boolean email_verification) {
+		this.email_verification = email_verification;
 	}
 
 	@Override

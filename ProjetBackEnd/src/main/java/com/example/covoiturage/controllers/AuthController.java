@@ -26,10 +26,9 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "*")
 public class AuthController {
 	@Autowired
 	AuthenticationManager authenticationManager;
@@ -56,18 +55,22 @@ public class AuthController {
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = jwtUtils.generateJwtToken(authentication);
-		
+
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+		if (userDetails.getEmail_verification().equals(true)){
+			List<String> roles = userDetails.getAuthorities().stream()
+					.map(item -> item.getAuthority())
+					.collect(Collectors.toList());
 
-		List<String> roles = userDetails.getAuthorities().stream()
-				.map(item -> item.getAuthority())
-				.collect(Collectors.toList());
-
-		return ResponseEntity.ok(new JwtResponse(jwt,
-												 userDetails.getId(),
-												 userDetails.getUsername(),
-												 userDetails.getEmail(),
-												 roles));
+			return ResponseEntity.ok(new JwtResponse(jwt,
+					userDetails.getId(),
+					userDetails.getUsername(),
+					userDetails.getEmail(),
+					roles));
+		}
+		else{
+			throw new RuntimeException("Email not validate");
+		}
 	}
 
 

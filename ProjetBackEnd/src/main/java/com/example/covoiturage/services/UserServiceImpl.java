@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-
 import java.util.List;
 import java.util.Set;
 
@@ -108,7 +107,7 @@ public class UserServiceImpl implements UserService{
         mailMessage.setSubject("Complete Registration!");
         mailMessage.setFrom("zoubirtest12@gmail.com");
         mailMessage.setText("To confirm your account, please click here : "
-                +"http://localhost:8080/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
+                +"http://localhost:8082/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
 
         emailService.sendEmail(mailMessage);
 
