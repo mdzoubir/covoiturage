@@ -1,0 +1,23 @@
+.bg-light{
+    background-image: url(/assets/images/nav.jpg)  ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-brand{
+    color: white;
+    font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+}
+nav{
+    padding: 20px;
+}
+/* @media (max-width: 992px)
+{
+    nav{
+        height: 70vh;
+    }
+} */
