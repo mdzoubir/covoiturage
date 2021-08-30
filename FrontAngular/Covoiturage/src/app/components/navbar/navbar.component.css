@@ -1,23 +1,126 @@
-.bg-light{
-    background-image: url(/assets/images/nav.jpg)  ;
-    background-repeat: no-repeat;
-    background-size: cover;
+body
+{
+    margin:0;
+    padding: 0;
 }
 
-.navbar-brand{
-    color: white;
-    font-weight: bold;
-}
-.navbar-light .navbar-nav .nav-link {
-    color: white;
-    font-weight: bold;
-}
+
 nav{
-    padding: 20px;
+    font-family: 'Bree Serif', serif;
+   
 }
-/* @media (max-width: 992px)
+.disp
 {
-    nav{
-        height: 70vh;
-    }
-} */
+   display: flex;
+   margin-right: auto;
+   margin-left: auto;
+}
+.us
+{
+    padding-right: 0.75em;
+}
+
+.links
+{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-right: 1em;
+}
+
+
+@media (max-width: 600px){
+ .links
+ {
+    align-items: center;
+    display: flex;
+    justify-content: start;
+ }
+}
+
+.content {
+    text-align: center;
+}
+
+
+
+.links > a {
+    color: #151515;
+    padding: 4px 0px;
+    font-size: 13px;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.s
+{
+       margin-top: 0.29em;;
+}
+
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+    color:#4cb3e2;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #151515;
+}
+
+.bgg{
+    background-color: white;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+    color: #4cb3e2;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    text-decoration: none;
+    color: #4cb3e2;
+}
+
+.btn-outline-success{
+    color: #fff;
+    background-color: #4cb3e2;
+    border:none;
+    line-height: 2.4;
+    font-size: 1em;
+   
+}
+
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: black;
+   
+}
+
+.btn-outline-success:focus {
+    color: #fff;
+    background-color: black;
+    border:none;
+    box-shadow: none;
+   
+}
+
+.btn-outline-success:active {
+    color: #fff;
+    background-color: black;
+    border:none;
+    box-shadow: none;
+   
+}
+
+
+
+.navbar-toggler-icon {
+    background-color: black;
+}

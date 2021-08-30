@@ -38,9 +38,25 @@ public class Covoiturage {
     @Column
     private  Float prix;
 
+    @NotBlank
+    @Column
+    private  String adresDepart;
+
+    @NotBlank
+    @Column
+    private  String DatePublie;
+
+    @NotBlank
+    @Column
+    private  Integer nbrPlace;
+
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "idV")
+    private Voiture voiture;
 
     @OneToMany(mappedBy = "covoiturage")
     private List<Ville> villesPassage;
@@ -120,5 +136,45 @@ public class Covoiturage {
 
     public void setPrix(Float prix) {
         this.prix = prix;
+    }
+
+    public String getAdresDepart() {
+        return adresDepart;
+    }
+
+    public void setAdresDepart(String adresDepart) {
+        this.adresDepart = adresDepart;
+    }
+
+    public String getDatePublie() {
+        return DatePublie;
+    }
+
+    public void setDatePublie(String datePublie) {
+        DatePublie = datePublie;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Voiture getVoiture() {
+        return voiture;
+    }
+
+    public void setVoiture(Voiture voiture) {
+        this.voiture = voiture;
+    }
+
+    public Integer getNbrPlace() {
+        return nbrPlace;
+    }
+
+    public void setNbrPlace(Integer nbrPlace) {
+        this.nbrPlace = nbrPlace;
     }
 }

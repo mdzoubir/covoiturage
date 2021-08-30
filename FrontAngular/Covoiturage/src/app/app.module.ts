@@ -10,6 +10,9 @@ import { DashbordAdminComponent } from './components/dashbord-admin/dashbord-adm
 import { RegistreComponent } from './components/registre/registre.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeadComponent } from './components/head/head.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CovoiturageAccComponent } from './components/covoiturage-acc/covoiturage-acc.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashbordAdminComponent,
     RegistreComponent,
     NavbarComponent,
+    HeadComponent,
+    HeaderComponent,
+    CovoiturageAccComponent,
     
   ],
   imports: [
@@ -28,7 +34,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule,
+    NgbModule
     
   ],
   providers: [],

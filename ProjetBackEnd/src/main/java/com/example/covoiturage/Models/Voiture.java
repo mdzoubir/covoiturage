@@ -20,6 +20,10 @@ public class Voiture {
     @Column
     private String color;
 
+    @NotBlank
+    @Column
+    private String datExpertassurance;
+
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
@@ -66,6 +70,14 @@ public class Voiture {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getDatExpertassurance() {
+        return datExpertassurance;
+    }
+
+    public void setDatExpertassurance(String datExpertassurance) {
+        this.datExpertassurance = datExpertassurance;
     }
 }
 

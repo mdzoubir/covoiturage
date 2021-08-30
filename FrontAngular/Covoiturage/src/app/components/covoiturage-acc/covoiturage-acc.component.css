@@ -1,0 +1,45 @@
+#newly
+{
+  padding-top:5em;
+  padding-bottom:5em ;
+  background-color: #f2f2f2;
+}
+.titre
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+}
+.pr{
+    padding-right: 1em;
+}
+.hrr
+{
+    width: 5em;
+    background-color:#4cb3e2;
+    height: 0.15em;
+     margin-bottom: 0.75em;
+}
+
+.card-text
+{
+    font-weight: bold;
+}
+.prix{
+    padding-left: 4em;
+    font-weight: bold;
+}
+.flex
+{
+   display: flex;
+}
+
+.btn-primary
+{
+    background-color:#4cb3e2 ;
+    border: none;
+}
+.btn-primary:hover
+{
+    color: #fff;
+    background-color: black;
+}
