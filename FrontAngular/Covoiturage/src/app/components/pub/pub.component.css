@@ -1,0 +1,49 @@
+.annonce
+{
+
+    background-image: url('/assets/images/bgannonce.jpg');
+    height: 40vh;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.para
+{
+    height: 40vh;
+    width: 100%;
+    background-color:rgb(21, 21, 21,0.8);
+}
+.letters{
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    
+}
+
+.ml6 {
+    position: relative;
+  }
+  
+  .ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .ml6 .letter {
+    display: inline-block;
+  }
+  .rr
+   {
+       margin-left:0px;
+       margin-right:0px;
+   }
+

@@ -1,0 +1,25 @@
+#about
+{
+    padding-top: 5em;
+}
+.hrr
+{
+    width: 5em;
+    background-color:#4cb3e2;
+    height: 0.15em;
+     margin-bottom: 0.75em;
+}
+.titre
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
+}
+.pd{
+    padding-top: 7em;
+}
+@media screen and (max-width: 600px) {
+  
+    .pd{
+        padding-top: 0em;
+    }
+  }

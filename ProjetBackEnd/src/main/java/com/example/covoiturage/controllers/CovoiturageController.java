@@ -3,6 +3,7 @@ package com.example.covoiturage.controllers;
 
 import com.example.covoiturage.Models.Covoiturage;
 import com.example.covoiturage.Models.Ville;
+import com.example.covoiturage.repository.CovoiturageReposotory;
 import com.example.covoiturage.services.CovoiturageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,9 @@ import java.util.List;
 public class CovoiturageController {
     @Autowired
     private CovoiturageService covoiturageService;
+
+    @Autowired
+    private CovoiturageReposotory covoiturageReposotory;
 
     @PostMapping
     public ResponseEntity<Covoiturage> createCovoiturage(@RequestBody Covoiturage covoiturage)
@@ -52,6 +56,12 @@ public class CovoiturageController {
     {
        Covoiturage covoiturage=covoiturageService.getCovoiturageById(covoiId);
         return new ResponseEntity(covoiturage,HttpStatus.OK);
+    }
+    @GetMapping("/FilterCovoi")
+    public ResponseEntity<List<Covoiturage>> FilterCovoi(@RequestBody Covoiturage covoiturage)
+    {
+        List<Covoiturage> covoiturage1=covoiturageReposotory.findAllByVilleDepartAndVilleArr(covoiturage.getVilleDepart(),covoiturage.getVilleArr());
+        return  new ResponseEntity(covoiturage1,HttpStatus.OK);
     }
 
 }

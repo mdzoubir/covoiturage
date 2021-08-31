@@ -13,6 +13,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeadComponent } from './components/head/head.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CovoiturageAccComponent } from './components/covoiturage-acc/covoiturage-acc.component';
+import { AproposComponent } from './components/apropos/apropos.component';
+import { PubComponent } from './components/pub/pub.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { CovoiturageAccComponent } from './components/covoiturage-acc/covoiturag
     HeadComponent,
     HeaderComponent,
     CovoiturageAccComponent,
+    AproposComponent,
+    PubComponent,
+    FooterComponent,
     
   ],
   imports: [
