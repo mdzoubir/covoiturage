@@ -1,10 +1,21 @@
 package com.example.covoiturage.Models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.sql.Date;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
+@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Covoiturage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,11 +23,15 @@ public class Covoiturage {
 
     @NotBlank
     @Column
-    private String DateArr;
+//    @Temporal(TemporalType.DATE)
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date DateArr;
 
     @NotBlank
     @Column
-    private String DateDepart;
+//    @Temporal(TemporalType.DATE)
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private java.sql.Date DateDepart;
 
     @NotBlank
     @Column
@@ -62,119 +77,5 @@ public class Covoiturage {
     private List<Ville> villesPassage;
 
 
-    public Covoiturage() {
-    }
 
-
-    public Long getIdC() {
-        return idC;
-    }
-
-    public void setIdC(Long idC) {
-        this.idC = idC;
-    }
-
-    public String getDateArr() {
-        return DateArr;
-    }
-
-    public void setDateArr(String dateArr) {
-        DateArr = dateArr;
-    }
-
-    public String getDateDepart() {
-        return DateDepart;
-    }
-
-    public void setDateDepart(String dateDepart) {
-        DateDepart = dateDepart;
-    }
-
-    public String getHeurArr() {
-        return heurArr;
-    }
-
-    public void setHeurArr(String heurArr) {
-        this.heurArr = heurArr;
-    }
-
-    public String getHeurDepart() {
-        return heurDepart;
-    }
-
-    public void setHeurDepart(String heurDepart) {
-        this.heurDepart = heurDepart;
-    }
-
-    public String getVilleDepart() {
-        return villeDepart;
-    }
-
-    public void setVilleDepart(String villeDepart) {
-        this.villeDepart = villeDepart;
-    }
-
-    public String getVilleArr() {
-        return villeArr;
-    }
-
-    public void setVilleArr(String villeArr) {
-        this.villeArr = villeArr;
-    }
-
-    public List<Ville> getVillesPassage() {
-        return villesPassage;
-    }
-
-    public void setVillesPassage(List<Ville> villesPassage) {
-        this.villesPassage = villesPassage;
-    }
-
-    public Float getPrix() {
-        return prix;
-    }
-
-    public void setPrix(Float prix) {
-        this.prix = prix;
-    }
-
-    public String getAdresDepart() {
-        return adresDepart;
-    }
-
-    public void setAdresDepart(String adresDepart) {
-        this.adresDepart = adresDepart;
-    }
-
-    public String getDatePublie() {
-        return DatePublie;
-    }
-
-    public void setDatePublie(String datePublie) {
-        DatePublie = datePublie;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Voiture getVoiture() {
-        return voiture;
-    }
-
-    public void setVoiture(Voiture voiture) {
-        this.voiture = voiture;
-    }
-
-    public Integer getNbrPlace() {
-        return nbrPlace;
-    }
-
-    public void setNbrPlace(Integer nbrPlace) {
-        this.nbrPlace = nbrPlace;
-    }
 }

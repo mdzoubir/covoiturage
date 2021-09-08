@@ -12,4 +12,6 @@ public interface CovoiturageService {
     Covoiturage updateCovoiturae(Long id,Covoiturage covoiturage);
     void deleteCovoiturage(Long id);
     List<Covoiturage> getAllCovoiturage();
+    List<Covoiturage> getListCinq(int page);
+    List<Covoiturage> getListDate();
 }

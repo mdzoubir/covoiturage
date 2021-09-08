@@ -64,4 +64,18 @@ public class CovoiturageController {
         return  new ResponseEntity(covoiturage1,HttpStatus.OK);
     }
 
+    @GetMapping("/getCinqCov")
+    public ResponseEntity<List<Covoiturage>> ListCovoiCinq(@RequestParam(value = "limit", defaultValue = "5") int limit)
+    {
+        List<Covoiturage> covoiturages=covoiturageService.getListCinq(limit);
+        return new ResponseEntity<>(covoiturages,HttpStatus.OK);
+    }
+
+    @GetMapping("/getcovoiDate")
+    public ResponseEntity<List<Covoiturage>> ListCovoiDate()
+    {
+        List<Covoiturage> covoiturages1=covoiturageService.getListDate();
+        return new ResponseEntity<>(covoiturages1,HttpStatus.OK);
+    }
+
 }
