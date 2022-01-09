@@ -24,11 +24,16 @@ export class TokenService {
     window.sessionStorage.setItem(TOKEN_KEY,token);
   }
 
+  set(data: any){
+    localStorage.setItem('token', data.accessToken);
+    localStorage.setItem('id', data.email);
+  }
+
   getId(){
     return localStorage.getItem('id');
   }
 
-  
+
   getIsLoggin() {
     return localStorage.getItem('isLoggin');
   }
@@ -43,7 +48,6 @@ export class TokenService {
     const token = this.getToken();
     const id = this.getId();
     const isLoggin = this.getIsLoggin();
-    console.log("id " + id);
     if (isLoggin) {
       return true;
     }
@@ -69,7 +73,7 @@ export class TokenService {
 
     return {};
   }
- 
+
   loggedIn(){
     return this.getToken();
    }

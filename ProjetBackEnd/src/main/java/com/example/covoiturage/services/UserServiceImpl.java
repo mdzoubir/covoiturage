@@ -102,14 +102,14 @@ public class UserServiceImpl implements UserService{
 
         confirmationTokenRepository.save(confirmationToken);
 
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(user.getEmail());
-        mailMessage.setSubject("Complete Registration!");
-        mailMessage.setFrom("zahraezahid150@gmail.com");
-        mailMessage.setText("To confirm your account, please click here : "
-                +"http://localhost:8082/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
-
-        emailService.sendEmail(mailMessage);
+//        SimpleMailMessage mailMessage = new SimpleMailMessage();
+//        mailMessage.setTo(user.getEmail());
+//        mailMessage.setSubject("Complete Registration!");
+//        mailMessage.setFrom("zahraezahid150@gmail.com");
+//        mailMessage.setText("To confirm your account, please click here : "
+//                +"http://localhost:8082/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
+//
+//        emailService.sendEmail(mailMessage);
 
 
         UserDto dto = new UserDto();

@@ -11,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  
+
   loginForm=new FormGroup(
     {
       username:new FormControl(null,[Validators.required,Validators.required]),
@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if(this.tokenservice.getToken()){
       this.roles = this.tokenservice.getUser().roles
-      console.log(this.tokenservice.getUser())
       if(Array.from(this.roles).includes("ROLE_ADMIN")){
         this.router.navigateByUrl("/dashbordadmin")
       }else{
@@ -43,9 +42,9 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(username,password).subscribe(
       data => {
-        console.log(data)
         this.isLoggedIn = true;
         this.tokenservice.saveToken(data.accessToken);
+        this.tokenservice.set(data);
         this.tokenservice.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;

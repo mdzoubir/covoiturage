@@ -76,6 +76,4 @@ public class Covoiturage {
     @OneToMany(mappedBy = "covoiturage")
     private List<Ville> villesPassage;
 
-
-
 }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,6 +16,7 @@ import { CovoiturageAccComponent } from './components/covoiturage-acc/covoiturag
 import { AproposComponent } from './components/apropos/apropos.component';
 import { PubComponent } from './components/pub/pub.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {JwtInterceptor} from './interceptor/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AproposComponent,
     PubComponent,
     FooterComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -41,9 +42,15 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule
-    
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

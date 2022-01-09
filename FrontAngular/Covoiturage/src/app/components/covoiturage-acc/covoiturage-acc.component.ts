@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Covoiturage} from '../../models/covoiturage';
+import {CovoiturageService} from '../../services/covoiturage.service';
 
 @Component({
   selector: 'app-covoiturage-acc',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CovoiturageAccComponent implements OnInit {
 
-  constructor() { }
+  covoiturages: Covoiturage[] = []
+
+  constructor(private covoiturageService: CovoiturageService) { }
 
   ngOnInit(): void {
+    this.getAll();
+  }
+
+
+  getAll(){
+    this.covoiturageService.getAllCovoiturage().subscribe(
+      (res: Covoiturage[]) => {
+        this.covoiturages = res;
+      }
+    )
   }
 
 }

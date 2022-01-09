@@ -10,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistreComponent implements OnInit {
 
- 
+
 
 
   registreForm=new FormGroup(
@@ -23,13 +23,12 @@ export class RegistreComponent implements OnInit {
     }
   )
   constructor(private authService:AuthService,private router:Router) {
-    
+
   }
 
   ngOnInit(): void {}
 
   onSubmit(): void {
-    console.log("in onsubmit method");
     const { fullName,username, email, password ,telephone} = this.registreForm.value;
 
     this.authService.register(fullName,username, email, password,telephone).subscribe
