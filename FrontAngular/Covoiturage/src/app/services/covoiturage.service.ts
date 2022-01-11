@@ -14,7 +14,11 @@ export class CovoiturageService {
     private http : HttpClient
   ) { }
 
-  getAllCovoiturage(): Observable<Covoiturage[]>{
-    return this.http.get<Covoiturage[]>('http://localhost:8082/covoiturage/getAllConvoi');
+  getCinqCovoiturage(): Observable<Covoiturage[]>{
+    return this.http.get<Covoiturage[]>('http://localhost:8082/covoiturage/getCinqCov');
+  }
+
+  getAllCov(){
+    return this.http.get('http://localhost:8082/covoiturage/getAllConvoi');
   }
 }

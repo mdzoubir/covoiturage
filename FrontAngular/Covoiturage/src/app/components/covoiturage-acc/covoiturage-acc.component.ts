@@ -19,7 +19,7 @@ export class CovoiturageAccComponent implements OnInit {
 
 
   getAll(){
-    this.covoiturageService.getAllCovoiturage().subscribe(
+    this.covoiturageService.getCinqCovoiturage().subscribe(
       (res: Covoiturage[]) => {
         this.covoiturages = res;
       }

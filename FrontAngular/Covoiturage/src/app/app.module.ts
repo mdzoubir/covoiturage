@@ -17,6 +17,8 @@ import { AproposComponent } from './components/apropos/apropos.component';
 import { PubComponent } from './components/pub/pub.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {JwtInterceptor} from './interceptor/jwt.interceptor';
+import { AllCovComponent } from './components/all-cov/all-cov.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import {JwtInterceptor} from './interceptor/jwt.interceptor';
     AproposComponent,
     PubComponent,
     FooterComponent,
+    AllCovComponent,
 
   ],
   imports: [
@@ -41,8 +44,8 @@ import {JwtInterceptor} from './interceptor/jwt.interceptor';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
-
+    NgbModule,
+    NgxPaginationModule
   ],
   providers: [
     {

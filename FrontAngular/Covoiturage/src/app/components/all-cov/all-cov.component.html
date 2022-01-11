@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<header class="mt-5">
+
+  <!-- Jumbotron -->
+  <div class="p-5 text-center bg-light">
+    <h1 class="m-3">Les covoiturages</h1>
+  </div>
+
+  <div class="col-12">
+    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <tr *ngFor="let cov of covoiturages | paginate: {itemsPerPage: 5, currentPage: p}" class="col-md-4 mb-3">
+              <div class="card shadow-lg">
+
+                <div class="card-body">
+                  <div class="flex">
+                    <i class="fas fa-map-marker-alt pr"></i>
+                    <p class="card-text" style="color: #4cb3e2;">Ville Départ :</p><p>{{cov.villeDepart}} Le {{cov.DateDepart}} à {{cov.heurDepart}}</p>
+                  </div>
+                  <div class="flex">
+                    <i class="fas fa-map-marker-alt pr"></i>
+                    <p class="card-text" style="color: #4cb3e2;">Ville D'Arrivé :</p><p>{{cov.villeArr}} Le {{cov.DateArr}} à {{cov.heurArr}}</p>
+                  </div>
+                  <hr>
+                  <div class="flex">
+                    <p class="card-text">{{cov.username}}</p>
+                    <p style="color: #4cb3e2;" class="prix">{{cov.prix}} Dh</p>
+                  </div>
+
+                </div>
+              </div>
+            </tr>
+            <pagination-controls
+              (pageChange)="p = $event">
+            </pagination-controls>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</header>
