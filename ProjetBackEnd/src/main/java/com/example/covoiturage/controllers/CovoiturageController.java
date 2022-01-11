@@ -48,15 +48,13 @@ public class CovoiturageController {
     }
 
     @GetMapping("/getAllConvoi")
-    public ResponseEntity<CovoiturageResponce> getAllCovoi()
-    {
+    public ResponseEntity<CovoiturageResponce> getAllCovoi() {
         List<CovoiturageResponce> covoiList=covoiturageService.getAllCovoiturage();
         return new ResponseEntity(covoiList,HttpStatus.OK);
     }
 
     @GetMapping("/getConvoi/{covoiId}")
-    public ResponseEntity<Ville> getById(@PathVariable Long covoiId)
-    {
+    public ResponseEntity<Ville> getById(@PathVariable Long covoiId) {
        Covoiturage covoiturage=covoiturageService.getCovoiturageById(covoiId);
         return new ResponseEntity(covoiturage,HttpStatus.OK);
     }

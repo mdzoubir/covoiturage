@@ -11,7 +11,9 @@ export class AllCovComponent implements OnInit {
   p: number = 1;
   covoiturages : Covoiturage[] = [];
 
-  constructor(private covoiturageService: CovoiturageService) { }
+  constructor(
+    private covoiturageService: CovoiturageService
+  ) { }
 
   ngOnInit(): void {
     this.getAllCov();
@@ -19,7 +21,7 @@ export class AllCovComponent implements OnInit {
 
 
   getAllCov(){
-    this.covoiturageService.getCinqCovoiturage().subscribe((res: Covoiturage[]) => {
+    this.covoiturageService.getAllCov().subscribe((res: Covoiturage[]) => {
       this.covoiturages = res;
     })
   }
