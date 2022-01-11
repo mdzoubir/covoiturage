@@ -67,11 +67,17 @@ public class CovoiturageServiceImpl implements CovoiturageService{
     }
 
     @Override
-    public List<Covoiturage> getListCinq(int limit) {
+    public List<CovoiturageResponce> getListCinq(int limit) {
         PageRequest pageable = PageRequest.of(0, limit);
         List<Covoiturage> logsPage = covoiturageReposotory.findListeCinq(pageable);
-        System.out.println(logsPage.size());
-        return logsPage;
+        List<CovoiturageResponce> covoiturageResponces = new ArrayList<>();
+        for (Covoiturage covoiturage : logsPage){
+            CovoiturageResponce covoiturageResponce = new CovoiturageResponce();
+            BeanUtils.copyProperties(covoiturage, covoiturageResponce);
+            covoiturageResponce.setUsername(covoiturage.getUser().getFullName());
+            covoiturageResponces.add(covoiturageResponce);
+        }
+        return covoiturageResponces;
     }
 
     @Override

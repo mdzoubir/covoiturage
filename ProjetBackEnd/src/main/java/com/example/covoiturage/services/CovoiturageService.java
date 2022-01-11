@@ -13,6 +13,6 @@ public interface CovoiturageService {
     Covoiturage updateCovoiturae(Long id,Covoiturage covoiturage);
     void deleteCovoiturage(Long id);
     List<CovoiturageResponce> getAllCovoiturage();
-    List<Covoiturage> getListCinq(int page);
+    List<CovoiturageResponce> getListCinq(int page);
     List<Covoiturage> getListDate();
 }
