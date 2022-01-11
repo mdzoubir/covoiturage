@@ -26,7 +26,7 @@ export class TokenService {
 
   set(data: any){
     localStorage.setItem('token', data.accessToken);
-    localStorage.setItem('id', data.email);
+    localStorage.setItem('id', data.id);
   }
 
   getId(){
