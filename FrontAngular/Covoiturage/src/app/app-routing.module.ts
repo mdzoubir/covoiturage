@@ -8,6 +8,7 @@ import {AllCovComponent} from './components/all-cov/all-cov.component';
 import {AuthGuard} from './guard/auth.guard';
 import {AfterAuthGuard} from './guard/after-auth.guard';
 import {CreateCovoiturageComponent} from './components/create-covoiturage/create-covoiturage.component';
+import {AddCarComponent} from './components/add-car/add-car.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'add-covoiturage',
     component: CreateCovoiturageComponent
+  },
+  {
+    path: 'add-car',
+    component: AddCarComponent
   }
 ];
 

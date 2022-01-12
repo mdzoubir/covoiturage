@@ -20,6 +20,7 @@ import {JwtInterceptor} from './interceptor/jwt.interceptor';
 import { AllCovComponent } from './components/all-cov/all-cov.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CreateCovoiturageComponent } from './components/create-covoiturage/create-covoiturage.component';
+import { AddCarComponent } from './components/add-car/add-car.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { CreateCovoiturageComponent } from './components/create-covoiturage/crea
     FooterComponent,
     AllCovComponent,
     CreateCovoiturageComponent,
+    AddCarComponent,
 
   ],
   imports: [

@@ -10,11 +10,11 @@ public class Voiture {
     private Long idV;
 
     @Column(unique=true)
-    private String Matricule;
+    private String matricule;
 
     @NotBlank
     @Column
-    private String TypeV;
+    private String typeV;
 
     @NotBlank
     @Column
@@ -48,22 +48,6 @@ public class Voiture {
         this.user = user;
     }
 
-    public String getMatricule() {
-        return Matricule;
-    }
-
-    public void setMatricule(String matricule) {
-        Matricule = matricule;
-    }
-
-    public String getTypeV() {
-        return TypeV;
-    }
-
-    public void setTypeV(String typeV) {
-        TypeV = typeV;
-    }
-
     public String getColor() {
         return color;
     }
@@ -78,6 +62,22 @@ public class Voiture {
 
     public void setDatExpertassurance(String datExpertassurance) {
         this.datExpertassurance = datExpertassurance;
+    }
+
+    public String getMatricule() {
+        return matricule;
+    }
+
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
+    }
+
+    public String getTypeV() {
+        return typeV;
+    }
+
+    public void setTypeV(String typeV) {
+        this.typeV = typeV;
     }
 }
 

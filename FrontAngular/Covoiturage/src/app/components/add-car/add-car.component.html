@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<header class="mt-5">
+
+  <!-- Jumbotron -->
+  <div class="p-5 text-center bg-light">
+    <h1 class="m-3">Ajouter une Covoiturage</h1>
+  </div>
+
+  <form class="container" [formGroup]="addCarForm" (ngSubmit)="addNewCar()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Entrez matricule de voiture</label>
+      <input formControlName="matricule" type="text" placeholder="matricule" class="form-control" id="exampleInputEmail1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Entrez type de voiture</label>
+      <input formControlName="typeV" type="text" class="form-control" placeholder="type de voiture" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="color" class="form-label">Entrez coleur de voiture</label>
+      <input formControlName="color" type="color" class="m-lg-1" placeholder="type de voiture" id="color">
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">date d'expiration assurance voiture</label>
+      <input formControlName="datExpertassurance" type="date" class="m-lg-1" placeholder="tydatExpertassurancepe de voiture" id="date">
+    </div>
+
+    <button [hidden]="addCarForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+    {{addCarForm.value | json}}
+  </form>
+
+</header>

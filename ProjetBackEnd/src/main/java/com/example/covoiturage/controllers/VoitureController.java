@@ -19,14 +19,14 @@ public class VoitureController {
     @Autowired
     private VoitureService voitureService;
 
-    @PostMapping
-    public ResponseEntity<Voiture> createVille(@RequestBody Voiture voiture)
+    @PostMapping("/{userId}")
+    public ResponseEntity<Voiture> createVille(@RequestBody Voiture voiture, @PathVariable Long userId)
     {
-        Voiture voitures=voitureService.createVoiture(voiture);
+        Voiture voitures = voitureService.createVoiture(voiture, userId);
         return new ResponseEntity<>(voitures, HttpStatus.CREATED);
     }
 
-    @PutMapping(path = "/{matricule}}")
+    @PutMapping(path = "/{matricule}")
     public  ResponseEntity<Voiture> updateVille(@RequestBody Voiture voiture,@PathVariable Long id)
     {
         Voiture voitures=voitureService.updateVoiture(id,voiture);
