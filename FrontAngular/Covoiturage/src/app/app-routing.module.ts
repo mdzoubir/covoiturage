@@ -7,11 +7,12 @@ import { RegistreComponent } from './components/registre/registre.component';
 import {AllCovComponent} from './components/all-cov/all-cov.component';
 import {AuthGuard} from './guard/auth.guard';
 import {AfterAuthGuard} from './guard/after-auth.guard';
+import {CreateCovoiturageComponent} from './components/create-covoiturage/create-covoiturage.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
     {
@@ -21,7 +22,6 @@ const routes: Routes = [
   },
   {
     path:'home',
-    canActivate: [AuthGuard],
     component:HomeComponent
   }
   ,{
@@ -36,8 +36,11 @@ const routes: Routes = [
   },
   {
     path: 'allCov',
-    canActivate: [AuthGuard],
     component: AllCovComponent
+  },
+  {
+    path: 'add-covoiturage',
+    component: CreateCovoiturageComponent
   }
 ];
 

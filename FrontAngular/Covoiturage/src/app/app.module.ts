@@ -4,7 +4,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { DashbordAdminComponent } from './components/dashbord-admin/dashbord-admin.component';
 import { RegistreComponent } from './components/registre/registre.component';
@@ -19,6 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import {JwtInterceptor} from './interceptor/jwt.interceptor';
 import { AllCovComponent } from './components/all-cov/all-cov.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { CreateCovoiturageComponent } from './components/create-covoiturage/create-covoiturage.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     PubComponent,
     FooterComponent,
     AllCovComponent,
+    CreateCovoiturageComponent,
 
   ],
   imports: [
@@ -45,7 +48,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
+
   ],
   providers: [
     {

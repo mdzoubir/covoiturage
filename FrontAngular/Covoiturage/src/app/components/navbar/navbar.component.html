@@ -8,10 +8,10 @@
 
     <div class="collapse navbar-collapse" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
       <ul class="navbar-nav mr-auto">
-        
+
 
         <li class="nav-item ">
-          <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#newly"> 
+          <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#newly">
             Accueil</a>
         </li>
 
@@ -23,18 +23,18 @@
           <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#popular">Nouvellement ajouté</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="">Les Covoiturages</a>
+          <a class="nav-link" routerLink='/allCov'>Les Covoiturages</a>
         </li>
         <li class="nav-item links">
           <i class="fas fa-user  us"></i>
-          <a class="a" href="">connexion/</a>
-          <a class="a" href="">S'inscrire</a>
+          <a class="a" routerLink='/login'>connexion/</a>
+          <a class="a" routerLink='/registre'>S'inscrire</a>
         </li>
         <li class="nav-item ">
-          <a href=""><button class="btn btn-outline-success my-2 my-sm-0">Soumettre Covoiturage</button></a>
+          <a routerLink='/add-covoiturage'><button class="btn btn-outline-success my-2 my-sm-0">Soumettre Covoiturage</button></a>
         </li>
       </ul>
-    
+
     </div>
-  </div>  
+  </div>
 </nav>
