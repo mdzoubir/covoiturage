@@ -2,7 +2,11 @@ package com.example.covoiturage.services;
 
 
 import com.example.covoiturage.Models.Covoiturage;
+import com.example.covoiturage.Models.User;
+import com.example.covoiturage.Models.Voiture;
 import com.example.covoiturage.repository.CovoiturageReposotory;
+import com.example.covoiturage.repository.UserRepository;
+import com.example.covoiturage.repository.VoitureReposotory;
 import com.example.covoiturage.responce.CovoiturageResponce;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +27,18 @@ public class CovoiturageServiceImpl implements CovoiturageService{
     @Autowired
     CovoiturageReposotory covoiturageReposotory;
 
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private VoitureReposotory voitureReposotory;
+
     @Override
-    public Covoiturage createCovoiturage(Covoiturage covoiturage) {
+    public Covoiturage createCovoiturage(Covoiturage covoiturage, Long userId, String carMatricule) {
+        Voiture voiture = voitureReposotory.findByMatricule(carMatricule);
+        User user = userRepository.findById(userId).get();
+        covoiturage.setUser(user);
+        covoiturage.setVoiture(voiture);
         return covoiturageReposotory.save(covoiturage);
     }
 
@@ -84,6 +98,5 @@ public class CovoiturageServiceImpl implements CovoiturageService{
         Date date=new Date();
         return  covoiturageReposotory.findListDate(date);
     }
-
 
 }

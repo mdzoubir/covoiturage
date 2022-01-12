@@ -25,10 +25,9 @@ public class CovoiturageController {
     @Autowired
     private CovoiturageReposotory covoiturageReposotory;
 
-    @PostMapping
-    public ResponseEntity<Covoiturage> createCovoiturage(@RequestBody Covoiturage covoiturage)
-    {
-        Covoiturage covoiturages=covoiturageService.createCovoiturage(covoiturage);
+    @PostMapping("/{userId}/{matricule}")
+    public ResponseEntity<Covoiturage> createCovoiturage(@RequestBody Covoiturage covoiturage, @PathVariable Long userId, @PathVariable String matricule) {
+        Covoiturage covoiturages=covoiturageService.createCovoiturage(covoiturage, userId, matricule);
         return  new ResponseEntity<>(covoiturages, HttpStatus.CREATED);
     }
 

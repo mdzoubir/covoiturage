@@ -8,7 +8,7 @@ import java.util.List;
 
 
 public interface CovoiturageService {
-    Covoiturage createCovoiturage(Covoiturage covoiturage);
+    Covoiturage createCovoiturage(Covoiturage covoiturage, Long userId, String carMatricule);
     Covoiturage getCovoiturageById(Long id);
     Covoiturage updateCovoiturae(Long id,Covoiturage covoiturage);
     void deleteCovoiturage(Long id);

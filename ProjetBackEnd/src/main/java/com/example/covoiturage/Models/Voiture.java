@@ -27,6 +27,7 @@ public class Voiture {
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
+
  public  Voiture()
  {
 

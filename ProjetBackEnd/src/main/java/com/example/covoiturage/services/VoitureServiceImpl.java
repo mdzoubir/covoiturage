@@ -39,7 +39,6 @@ public class VoitureServiceImpl implements  VoitureService{
 
     @Override
     public void deleteVoiture(Long id) {
-
         try {
             Voiture voiture=voitureReposotory.findVoitureByIdV(id);
             voitureReposotory.delete(voiture);
